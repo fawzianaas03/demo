@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+.DS_Store
+.env
+
+# Rendered videos live in out/; export final files to deliverables/ explicitly.
+out
