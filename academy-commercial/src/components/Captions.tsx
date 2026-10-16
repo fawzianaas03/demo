@@ -7,13 +7,22 @@ import { COLORS, FONTS } from "../styles/theme";
 
 /**
  * Burned-in narration captions for sound-off viewing. Lines already written
- * on screen as typography (onScreen: true) are skipped to avoid doubling.
+ * on screen as typography (onScreen: true) are skipped to avoid doubling, as
+ * are lines listed for a ratio in captionHiddenIn: in 9:16 the end card's join
+ * QR occupies the caption area, and a covered QR does not scan.
  */
 export const Captions: React.FC = () => {
   const frame = useCurrentFrame();
   const { portrait, width } = useLayout();
   const t = frame / FPS;
-  const line = NARRATION.find((l) => !l.onScreen && t >= l.start - 0.3 && t <= l.end + 0.5);
+  const ratio = portrait ? "9x16" : "16x9";
+  const line = NARRATION.find(
+    (l) =>
+      !l.onScreen &&
+      !("captionHiddenIn" in l && (l.captionHiddenIn as string[]).includes(ratio)) &&
+      t >= l.start - 0.3 &&
+      t <= l.end + 0.5,
+  );
   if (!line) return null;
   const o = envelope(frame, (line.start - 0.3) * FPS, line.start * FPS, line.end * FPS, (line.end + 0.5) * FPS);
   return (

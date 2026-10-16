@@ -4,6 +4,7 @@
 #   scripts/render.sh            # 1080p 16:9 + 1080×1920 vertical
 #   scripts/render.sh --4k       # also the 3840×2160 master
 #   CAPTIONS=false scripts/render.sh   # without burned-in narration captions
+#   ONLY=vertical scripts/render.sh    # just one cut (horizontal | vertical)
 #
 # Audio target: -16 LUFS integrated / -1.5 dBTP once narration is in. The
 # narration-free edition (voiceoverMode "none") is an ambient soundscape and is
@@ -59,10 +60,15 @@ normalise() { # in out — two-pass EBU R128 loudnorm, video stream copied untou
   echo "✔ $out"
 }
 
-render AcademyCommercial "academy-commercial-1080p.mp4"
-web "academy-commercial-1080p.mp4" "academy-commercial-1080p-web.mp4"
-render AcademyCommercialVertical "academy-commercial-vertical-1080x1920.mp4"
-web "academy-commercial-vertical-1080x1920.mp4" "academy-commercial-vertical-1080x1920-web.mp4"
+ONLY="${ONLY:-all}" # all | horizontal | vertical
+if [[ $ONLY == all || $ONLY == horizontal ]]; then
+  render AcademyCommercial "academy-commercial-1080p.mp4"
+  web "academy-commercial-1080p.mp4" "academy-commercial-1080p-web.mp4"
+fi
+if [[ $ONLY == all || $ONLY == vertical ]]; then
+  render AcademyCommercialVertical "academy-commercial-vertical-1080x1920.mp4"
+  web "academy-commercial-vertical-1080x1920.mp4" "academy-commercial-vertical-1080x1920-web.mp4"
+fi
 if $WITH_4K; then
   render AcademyCommercial "academy-commercial-4k.mp4" --scale=2
 fi

@@ -15,7 +15,7 @@ with FFmpeg and inspected. The QR code was decoded from the encoded video with O
 | No invented achievements, accreditation, numbers, testimonials or chats | ✅ the phone shows abstract placeholder rows only |
 | "Free" message visible | ✅ «مجانًا بالكامل» at 190 px with burst (S07, 01:14.6), «مجاني» on the end card |
 | Telegram highlighted | ✅ S07 «التعلم عن بُعد / عبر منصة تيليجرام», end card «عبر تيليجرام» + join QR |
-| Join QR | ✅ generated from `https://t.me/+ctoiWdJG_zNkM2Nk`; decodes to exactly that link from the encoded 16:9 and 9:16 videos |
+| Join QR | ✅ generated from `https://t.me/+ctoiWdJG_zNkM2Nk`; decodes to exactly that link from the encoded videos. Found and fixed: in 9:16 the VO09 caption covered the QR's lower finder pattern (01:25.6–01:31), so that caption is omitted in 9:16 (`captionHiddenIn`) |
 | All-age inclusivity | ✅ S02 + S06: women, men, children, young and older learners; «للنساء والرجال والأطفال / ولجميع الأعمار» |
 | Transitions | ✅ 0.75 s dissolves between scenes, match-dissolve S01→S02, right-to-left light wipes inside S04, fade from/to black |
 | Narration ↔ picture timing | ✅ captions follow `timeline.json`; each line sits inside its scene, and «مجانية بالكامل» lands with the visual reveal |
