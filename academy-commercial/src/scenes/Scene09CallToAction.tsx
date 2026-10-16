@@ -5,7 +5,7 @@ import { GoldDivider } from "../components/Geometry";
 import { ArabicLine, GoldText } from "../components/GoldText";
 import { EmeraldStage } from "../components/Stage";
 import { ACADEMY } from "../data/academy";
-import { sec, useSceneFrame } from "../data/timing";
+import { sceneWindow, sec, useSceneFrame } from "../data/timing";
 import { useLayout } from "../hooks/useLayout";
 import { EASE_IN_OUT, EASE_OUT, tween } from "../styles/anim";
 import { COLORS, FONTS } from "../styles/theme";
@@ -19,7 +19,9 @@ export const Scene09CallToAction: React.FC = () => {
     opacity: tween(f, [sec(t), sec(t + 0.7)], [0, 1]),
     translate: `0px ${tween(f, [sec(t), sec(t + 0.9)], [18, 0], EASE_OUT)}px`,
   });
-  const fadeOut = tween(f, [sec(6.2), sec(7)], [0, 1], EASE_IN_OUT);
+  // Fade to black over the scene's last 0.8 s, wherever timeline.json ends it.
+  const { length } = sceneWindow("S09");
+  const fadeOut = tween(f, [length - sec(0.8), length], [0, 1], EASE_IN_OUT);
   const pulse = 1 + 0.025 * Math.sin(Math.max(0, f - sec(3)) / 9);
 
   const column = (

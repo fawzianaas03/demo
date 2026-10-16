@@ -85,4 +85,4 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 | | |
 |---|---|
 | **Shot** | Emblem, name (gold), «تعليم القرآن الكريم وعلومه», «مجاني \| عن بُعد \| عبر تيليجرام», slogan «مع القرآن… تبدأ رحلتك، ويزهر أثرك.», pulsing gold button «انضموا إلينا الآن». The join QR (generated from the academy's Telegram invite link) and the printed link `t.me/+ctoiWdJG_zNkM2Nk` sit to the left of the column (16:9, right-to-left reading order) or below it (9:16). |
-| **End** | Fade to black 6.2–7.0 s. CTA is on screen from 2.6 s, so it holds about 4.4 s at full opacity. |
+| **End** | Fade to black 6.2–7.0 s. The CTA fades in at 2.6 s and holds at full opacity for 2.9 s before the fade; to lengthen it, raise S09's `end` and `durationInSeconds` in `timeline.json` together. |

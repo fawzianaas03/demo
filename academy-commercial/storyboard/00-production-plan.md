@@ -30,7 +30,7 @@ Remotion (React + TypeScript) project and rendered with FFmpeg.
 | 09 | دعوة للانضمام | 01:25–01:32 | dissolve; fade to black at 01:31.2 |
 
 The brief asked for ~90 s with a 5-second end card. The end card was lengthened to 7 s (01:25–01:32)
-so the call to action and join code stay readable for over 4 s after the narration ends.
+so the call to action and join QR stay on screen while the narration finishes and hold before the fade to black.
 
 ## Pipeline
 
