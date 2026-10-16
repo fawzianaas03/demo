@@ -64,7 +64,7 @@ export const Scene09CallToAction: React.FC = () => {
 
   return (
     <EmeraldStage seed="s9" pattern={0.12} particles={50}>
-      <AbsoluteFill style={{ flexDirection: portrait ? "column" : "row", alignItems: "center", justifyContent: "center", gap: portrait ? 50 : 120 }}>
+      <AbsoluteFill style={{ flexDirection: portrait ? "column" : "row-reverse", alignItems: "center", justifyContent: "center", gap: portrait ? 50 : 120 }}>
         {column}
         {hasCode && (
           <div style={{ ...step(2.2), display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>

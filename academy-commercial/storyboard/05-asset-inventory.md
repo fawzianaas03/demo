@@ -3,7 +3,7 @@
 | Asset | Path | Source / licence | Status |
 |---|---|---|---|
 | Academy emblem | `public/assets/academy-logo.jpg` | Supplied by the client (640×640 JPEG) | ✅ used in S03, S07 (phone avatar), S09. A larger or vector original would look sharper in the 4K master. |
-| Join QR / Telegram link | `src/data/academy.ts` → `telegramUrl` or `qrImage` | Must come from the academy | ⏳ pending: the end card omits the QR until one is configured |
+| Join QR / Telegram link | `src/data/academy.ts` → `telegramUrl` | Supplied by the academy: `https://t.me/+ctoiWdJG_zNkM2Nk` | ✅ QR generated from the link (version 3, error correction M) and printed under it; verified to decode in both cuts |
 | Fonts: Amiri, Cairo, Tajawal (Arabic + Latin subsets) | `public/fonts/*.woff2` | Google Fonts, SIL Open Font License 1.1 | ✅ bundled locally (`scripts/fetch-fonts.mjs`) |
 | Film grain tile | `public/assets/grain.png` | Generated (`scripts/generate-grain.py`) | ✅ |
 | Ambience stem | `public/audio/ambience.wav` | Generated, instrument-free (`scripts/generate-sound-design.py`) | ✅ |

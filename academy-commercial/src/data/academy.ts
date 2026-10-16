@@ -16,7 +16,7 @@ export const ACADEMY = {
    * Leave empty until the academy supplies it: the end screen then omits the
    * link and QR code instead of showing an invented address.
    */
-  telegramUrl: "",
+  telegramUrl: "https://t.me/+ctoiWdJG_zNkM2Nk",
   /** Optional short label printed under the QR code, e.g. "@handle" or "t.me/handle". */
   telegramLabel: "",
   /**
