@@ -9,14 +9,14 @@ with FFmpeg and inspected. The QR code was decoded from the encoded video with O
 | Leadership «تحت قيادة الأستاذة كريمة النعاس» | ✅ verbatim (S03) |
 | Program names (القاعدة النورانية، أحكام التجويد، تحفة الأطفال، الشاطبية، التبيان) | ✅ verbatim, plus «وغيرها من علوم القرآن الكريم والمتون العلمية» |
 | All 29 on-screen strings vs. brief | ✅ scripted comparison: every string appears verbatim in the brief |
-| Narration vs. brief | ✅ 8 of 9 lines verbatim. VO05 adds «والتبيان» so the narrator names all five programs shown (documented) |
+| Narration vs. brief | ✅ VO05 adds «والتبيان» so the narrator names all five programs shown. VO06 and VO07 were revised at the academy's request (women and children only; only Quran courses are free) |
 | Arabic shaping & direction | ✅ every string is one run in `dir="rtl"`; reveals are masks, never letter splits; inspected in all scenes, both ratios |
-| No fabricated Quranic verses | ✅ no verse, recitation or pseudo-script anywhere; the only text on the mushaf is its title «القرآن الكريم» |
+| No fabricated Quranic verses | ✅ no verse, recitation or pseudo-script anywhere; the only text on the wall panel is the title «القرآن الكريم» |
 | No invented achievements, accreditation, numbers, testimonials or chats | ✅ the phone shows abstract placeholder rows only |
-| "Free" message visible | ✅ «مجانًا بالكامل» at 190 px with burst (S07, 01:14.6), «مجاني» on the end card |
+| "Free" message visible and accurate | ✅ «دورات القرآن الكريم — مجانًا بالكامل» at 190 px with burst (S07, 01:14.6), «دورات القرآن مجانية» on the end card. Only the Quran courses are called free |
 | Telegram highlighted | ✅ S07 «التعلم عن بُعد / عبر منصة تيليجرام», end card «عبر تيليجرام» + join QR |
 | Join QR | ✅ generated from `https://t.me/+ctoiWdJG_zNkM2Nk`; decodes to exactly that link from the encoded videos. Found and fixed: in 9:16 the VO09 caption covered the QR's lower finder pattern (01:25.6–01:31), so that caption is omitted in 9:16 (`captionHiddenIn`) |
-| All-age inclusivity | ✅ S02 + S06: women, men, children, young and older learners; «للنساء والرجال والأطفال / ولجميع الأعمار» |
+| Audience | ✅ women and children only, as the academy serves them: no male figures anywhere; S02 + S06 show children, young, adult and older women; «للنساء والأطفال / ولجميع الأعمار» |
 | Transitions | ✅ 0.75 s dissolves between scenes, match-dissolve S01→S02, right-to-left light wipes inside S04, fade from/to black |
 | Narration ↔ picture timing | ✅ captions follow `timeline.json`; each line sits inside its scene, and «مجانية بالكامل» lands with the visual reveal |
 | CTA readability | ✅ «انضموا إلينا الآن» fades in from 01:27.6 and is fully opaque 01:28.3–01:31.2 (2.9 s; a three-word button); the name, offer and QR are on screen from ~01:27 until the 0.8 s fade to black |

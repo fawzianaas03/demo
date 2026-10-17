@@ -1,4 +1,5 @@
-// Optional live-action footage. Every human vignette in the film is drawn as a
+// Optional live-action footage. The academy teaches women and children, so
+// every vignette shows women or children. Each is drawn as a
 // back-lit silhouette inside an arch. To replace one with licensed or filmed
 // footage, put the clip in public/footage/ and set its path here, e.g.
 //   womanStudying: "footage/woman-studying.mp4",
@@ -7,21 +8,21 @@
 
 export type FootageSlotId =
   | "womanStudying"
-  | "manReviewing"
+  | "childrenReading"
   | "childWithParent"
-  | "memorization"
+  | "womanMemorizing"
   | "tabletLesson"
-  | "youngAdultNotes"
+  | "youngWomanNotes"
   | "olderWomanReading"
-  | "adultOnline";
+  | "womanOnline";
 
 export const FOOTAGE: Record<FootageSlotId, string | null> = {
   womanStudying: null,
-  manReviewing: null,
+  childrenReading: null,
   childWithParent: null,
-  memorization: null,
+  womanMemorizing: null,
   tabletLesson: null,
-  youngAdultNotes: null,
+  youngWomanNotes: null,
   olderWomanReading: null,
-  adultOnline: null,
+  womanOnline: null,
 };

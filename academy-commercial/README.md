@@ -56,7 +56,7 @@ academy-commercial/
 │  ├─ Root.tsx                  compositions (master, vertical, per-scene, dev sheet)
 │  ├─ compositions/             AcademyCommercial (timeline, captions, audio mix), VignetteSheet
 │  ├─ scenes/                   Scene01Light … Scene09CallToAction
-│  ├─ components/               Atmosphere, Geometry, GoldText, Mushaf, IslamicWindow, Vignette,
+│  ├─ components/               Atmosphere, Geometry, GoldText, WallPanel, IslamicWindow, Vignette,
 │  │                            Brand, ProgramIcons, PhoneMockup, Captions, Stage
 │  ├─ data/                     academy.ts, timeline.json, timing.ts, audio.ts, footage.ts
 │  ├─ hooks/useLayout.ts        16:9 ↔ 9:16 layout facts

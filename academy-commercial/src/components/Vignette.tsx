@@ -14,20 +14,9 @@ const VH = 800;
 const DESK = 640;
 const SIL = "#06100c";
 
-type FigureKind = "man" | "woman" | "youth" | "child" | "elder";
+type FigureKind = "woman" | "child" | "elder";
 
-const FIGURE_PATHS: Record<FigureKind, { body: string; head?: { cx: number; cy: number; rx: number; ry: number }; extra?: string; face?: boolean }> = {
-  man: {
-    body: "M -132 0 C -132 -78 -118 -124 -86 -142 C -58 -158 -34 -162 -24 -164 L -22 -196 L 22 -196 L 24 -164 C 34 -162 58 -158 86 -142 C 118 -124 132 -78 132 0 Z",
-    head: { cx: 0, cy: -240, rx: 48, ry: 58 },
-    // kufi cap and short beard
-    extra: "M -46 -262 C -44 -304 44 -304 46 -262 Z M -36 -216 C -30 -184 30 -184 36 -216 C 20 -200 -20 -200 -36 -216 Z",
-  },
-  youth: {
-    body: "M -118 0 C -118 -76 -106 -120 -78 -138 C -54 -152 -32 -156 -22 -158 L -20 -190 L 20 -190 L 22 -158 C 32 -156 54 -152 78 -138 C 106 -120 118 -76 118 0 Z",
-    head: { cx: 0, cy: -236, rx: 46, ry: 56 },
-    extra: "M -48 -246 C -50 -300 50 -300 48 -246 C 30 -270 -30 -270 -48 -246 Z",
-  },
+const FIGURE_PATHS: Record<FigureKind, { body: string; head?: { cx: number; cy: number; rx: number; ry: number }; face?: boolean }> = {
   woman: {
     body: "M -138 0 C -138 -90 -120 -140 -78 -158 C -64 -166 -62 -190 -64 -230 C -66 -290 -34 -316 0 -316 C 34 -316 66 -290 64 -230 C 62 -190 64 -166 78 -158 C 120 -140 138 -90 138 0 Z",
     face: true,
@@ -56,7 +45,6 @@ const Figure: React.FC<{ kind: FigureKind; x: number; scale?: number; rim: strin
       <g style={{ filter: "drop-shadow(0 0 10px rgba(255,200,120,0.55))" }}>
         <path d={p.body} fill={SIL} {...rimStyle} />
         {p.head && <ellipse {...p.head} fill={SIL} {...rimStyle} />}
-        {p.extra && <path d={p.extra} fill={SIL} {...rimStyle} />}
       </g>
       {p.face && <ellipse cx={0} cy={-236} rx={36} ry={48} fill="#0e1c16" opacity={0.85} />}
       {kind === "elder" && (
@@ -146,13 +134,13 @@ const Teacup: React.FC<{ x: number }> = ({ x }) => (
 
 export type VignetteKind =
   | "womanStudying"
-  | "manReviewing"
+  | "childrenReading"
   | "childWithParent"
-  | "memorization"
+  | "womanMemorizing"
   | "tabletLesson"
-  | "youngAdultNotes"
+  | "youngWomanNotes"
   | "olderWomanReading"
-  | "adultOnline";
+  | "womanOnline";
 
 const Contents: React.FC<{ kind: VignetteKind; glow: number }> = ({ kind, glow }) => {
   const rim = COLORS.champagne;
@@ -165,12 +153,13 @@ const Contents: React.FC<{ kind: VignetteKind; glow: number }> = ({ kind, glow }
           <Lantern x={480} glow={glow} />
         </>
       );
-    case "manReviewing":
+    case "childrenReading":
       return (
         <>
-          <Figure kind="man" x={300} rim={rim} />
-          <RehalWithBook x={300} />
-          <BookStack x={120} />
+          <Figure kind="child" x={200} scale={1.12} rim={rim} />
+          <Figure kind="child" x={400} scale={1.02} rim={rim} />
+          <RehalWithBook x={300} scale={0.78} />
+          <Lantern x={530} glow={glow} />
         </>
       );
     case "childWithParent":
@@ -181,10 +170,10 @@ const Contents: React.FC<{ kind: VignetteKind; glow: number }> = ({ kind, glow }
           <RehalWithBook x={318} scale={0.82} />
         </>
       );
-    case "memorization":
+    case "womanMemorizing":
       return (
         <>
-          <Figure kind="youth" x={300} rim={rim} />
+          <Figure kind="woman" x={300} rim={rim} />
           <HeldBook x={300} y={DESK - 70} />
           <Lantern x={110} glow={glow} />
         </>
@@ -197,10 +186,10 @@ const Contents: React.FC<{ kind: VignetteKind; glow: number }> = ({ kind, glow }
           <Teacup x={470} />
         </>
       );
-    case "youngAdultNotes":
+    case "youngWomanNotes":
       return (
         <>
-          <Figure kind="youth" x={300} rim={rim} />
+          <Figure kind="woman" x={300} scale={0.92} rim={rim} />
           <HeldBook x={300} y={DESK - 66} glowing rotate={-4} />
           <BookStack x={490} />
         </>
@@ -213,10 +202,10 @@ const Contents: React.FC<{ kind: VignetteKind; glow: number }> = ({ kind, glow }
           <Teacup x={110} />
         </>
       );
-    case "adultOnline":
+    case "womanOnline":
       return (
         <>
-          <Figure kind="man" x={300} rim={rim} screenGlow />
+          <Figure kind="woman" x={300} rim={rim} screenGlow />
           <Laptop x={300} />
           <BookStack x={500} />
         </>

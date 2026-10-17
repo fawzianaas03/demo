@@ -5,13 +5,13 @@ import { EMERALD_BG } from "../styles/theme";
 
 const KINDS: VignetteKind[] = [
   "womanStudying",
-  "manReviewing",
+  "childrenReading",
   "childWithParent",
-  "memorization",
+  "womanMemorizing",
   "tabletLesson",
-  "youngAdultNotes",
+  "youngWomanNotes",
   "olderWomanReading",
-  "adultOnline",
+  "womanOnline",
 ];
 
 /** Dev contact sheet: every vignette side by side, for reviewing the illustrations. */

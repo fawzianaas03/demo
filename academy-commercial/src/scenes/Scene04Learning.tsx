@@ -11,8 +11,8 @@ import { EASE_IN_OUT, EASE_OUT, tween } from "../styles/anim";
 
 const SHOTS: { kind: VignetteKind; title: string }[] = [
   { kind: "tabletLesson", title: LEARNING_TITLES[0] },
-  { kind: "memorization", title: LEARNING_TITLES[1] },
-  { kind: "youngAdultNotes", title: LEARNING_TITLES[2] },
+  { kind: "womanMemorizing", title: LEARNING_TITLES[1] },
+  { kind: "youngWomanNotes", title: LEARNING_TITLES[2] },
 ];
 const SHOT = 13 / SHOTS.length;
 const WIPE = 0.7;

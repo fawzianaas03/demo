@@ -37,6 +37,15 @@ export const IslamicWindow: React.FC<{ width: number; height: number; glow?: num
   );
 };
 
+/** A carved wooden dado rail running across the wall at height `y`. */
+export const DadoRail: React.FC<{ y: number; width: number }> = ({ y, width }) => (
+  <div style={{ position: "absolute", left: 0, top: y, width, height: 2000 }}>
+    <div style={{ height: 16, background: "linear-gradient(180deg, #6e4423 0%, #3b2210 55%, #140a04 100%)", boxShadow: "0 6px 14px rgba(0,0,0,0.55)" }} />
+    <div style={{ height: 3, background: COLORS.gold, opacity: 0.35 }} />
+    <div style={{ height: "100%", background: "linear-gradient(180deg, rgba(20,12,6,0.85), rgba(6,4,2,0.95))" }} />
+  </div>
+);
+
 /** The lattice's shadow projected onto a wall: a warm patch broken by dark star lines. */
 export const CastLight: React.FC<{ width: number; height: number; intensity?: number; tile?: number }> = ({
   width,

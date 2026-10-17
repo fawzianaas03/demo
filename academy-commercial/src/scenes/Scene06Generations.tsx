@@ -8,9 +8,9 @@ import { sec, useSceneFrame } from "../data/timing";
 import { useLayout } from "../hooks/useLayout";
 import { EASE_IN_OUT, EASE_OUT, tween } from "../styles/anim";
 
-const PEOPLE: VignetteKind[] = ["childWithParent", "youngAdultNotes", "olderWomanReading", "adultOnline"];
+const PEOPLE: VignetteKind[] = ["childWithParent", "youngWomanNotes", "womanOnline", "olderWomanReading"];
 
-/** 00:57–01:08 — four generations, framed with equal dignity, on a slow lateral track. */
+/** 00:57–01:08 — women and children of every age, framed with equal dignity, on a slow lateral track. */
 export const Scene06Generations: React.FC = () => {
   const f = useSceneFrame();
   const { width, portrait } = useLayout();

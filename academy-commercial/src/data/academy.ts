@@ -9,7 +9,7 @@ export const ACADEMY = {
   tagline: "تعليم القرآن الكريم وعلومه",
   slogan: "مع القرآن… تبدأ رحلتك، ويزهر أثرك.",
   cta: "انضموا إلينا الآن",
-  ctaFeatures: ["مجاني", "عن بُعد", "عبر تيليجرام"],
+  ctaFeatures: ["دورات القرآن مجانية", "عن بُعد", "عبر تيليجرام"],
   logo: "assets/academy-logo.jpg",
   /**
    * The academy's official Telegram link, e.g. "https://t.me/<official-handle>".
@@ -55,14 +55,15 @@ export const PROGRAMS_TITLE = "البرامج التعليمية";
 export const PROGRAMS_FOOTER = "وغيرها من علوم القرآن الكريم والمتون العلمية";
 
 export const GENERATIONS = {
-  first: "للنساء والرجال والأطفال",
+  first: "للنساء والأطفال",
   second: "ولجميع الأعمار",
 };
 
 export const ONLINE = {
   first: "التعلم عن بُعد",
   second: "عبر منصة تيليجرام",
-  freeLead: "جميع البرامج التعليمية",
+  // Only the Quran courses are free — never claim every program is.
+  freeLead: "دورات القرآن الكريم",
   free: "مجانًا بالكامل",
 };
 

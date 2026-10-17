@@ -2,15 +2,15 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import { FilmGrain, GoldParticles, LightRays, Vignette } from "../components/Atmosphere";
 import { GoldText } from "../components/GoldText";
-import { CastLight, IslamicWindow } from "../components/IslamicWindow";
-import { MushafSet } from "../components/Mushaf";
+import { CastLight, DadoRail, IslamicWindow } from "../components/IslamicWindow";
+import { PANEL_HEIGHT, PANEL_WIDTH, WallPanel } from "../components/WallPanel";
 import { OPENING_LINE } from "../data/academy";
 import { sec, useSceneFrame } from "../data/timing";
 import { useLayout } from "../hooks/useLayout";
 import { EASE_IN_OUT, envelope, tween } from "../styles/anim";
 import { COLORS } from "../styles/theme";
 
-/** 00:00–00:10 — a dark room warms with sunrise; slow dolly toward the closed mushaf. */
+/** 00:00–00:10 — a dark room warms with sunrise; slow dolly toward the illuminated panel on the wall. */
 export const Scene01Light: React.FC = () => {
   const f = useSceneFrame();
   const { width, portrait } = useLayout();
@@ -19,10 +19,10 @@ export const Scene01Light: React.FC = () => {
   const dolly = tween(f, [0, sec(8.4)], [1, 1.14], (t) => t) * tween(f, [sec(8.4), sec(10.6)], [1, 1.9], EASE_IN_OUT);
   const bgDolly = 1 + (dolly - 1) * 0.45;
 
-  const book = portrait ? { x: 600, y: 1100, s: 1.0 } : { x: 1250, y: 610, s: 0.86 };
-  const win = portrait ? { x: 70, y: 120, w: 280, h: 440 } : { x: 150, y: 70, w: 380, h: 600 };
-  // The final push-in lands on the cover medallion, which match-cuts to the glowing point of scene 2.
-  const origin = `${book.x}px ${book.y - 150 * book.s}px`;
+  const panel = portrait ? { x: 590, y: 965, s: 1.08 } : { x: 1250, y: 510, s: 0.98 };
+  const win = portrait ? { x: 60, y: 96, w: 260, h: 400 } : { x: 150, y: 70, w: 380, h: 600 };
+  // The final push-in lands on the panel's shamsa, which match-cuts to the glowing point of scene 2.
+  const origin = `${panel.x}px ${panel.y}px`;
   const medallionGlow = tween(f, [sec(8.6), sec(10.4)], [0, 1]);
 
   return (
@@ -36,6 +36,7 @@ export const Scene01Light: React.FC = () => {
         <div style={{ position: "absolute", left: portrait ? 260 : 700, top: portrait ? 520 : 60, width: portrait ? 760 : 1050, height: portrait ? 900 : 780, transform: "skewX(-16deg)", opacity: sunrise }}>
           <CastLight width={portrait ? 760 : 1050} height={portrait ? 900 : 780} intensity={0.85} tile={portrait ? 130 : 150} />
         </div>
+        <DadoRail y={portrait ? 1420 : 940} width={width} />
         <div style={{ position: "absolute", left: win.x, top: win.y }}>
           <IslamicWindow width={win.w} height={win.h} glow={sunrise} />
         </div>
@@ -56,14 +57,14 @@ export const Scene01Light: React.FC = () => {
         <LightRays x={win.x + win.w * 0.5} y={win.y + win.h * 0.45} angle={portrait ? 62 : 24} spread={portrait ? 22 : 18} intensity={0.32} count={8} length={portrait ? 1900 : 1700} />
       </AbsoluteFill>
       <AbsoluteFill style={{ scale: String(dolly), transformOrigin: origin }}>
-        <div style={{ position: "absolute", left: book.x - 320, top: book.y - 540 }}>
-          <MushafSet scale={book.s} rotateX={8} rotateY={22} light={0.25 + 0.75 * sunrise} sheen={tween(f, [sec(3), sec(8)], [0, 1], EASE_IN_OUT)} />
+        <div style={{ position: "absolute", left: panel.x - PANEL_WIDTH / 2, top: panel.y - PANEL_HEIGHT / 2, scale: String(panel.s) }}>
+          <WallPanel light={0.2 + 0.8 * sunrise} sheen={tween(f, [sec(3), sec(8)], [0, 1], EASE_IN_OUT)} />
         </div>
         <div
           style={{
             position: "absolute",
-            left: book.x - 300,
-            top: book.y - 150 * book.s - 300,
+            left: panel.x - 300,
+            top: panel.y - 300,
             width: 600,
             height: 600,
             borderRadius: "50%",

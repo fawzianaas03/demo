@@ -9,9 +9,9 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 
 | | |
 |---|---|
-| **Shot** | Fade up from black on a dark room. Sunrise brightens a pointed-arch mashrabiya (0.3–5 s); its lattice is cast as a warm shadow pattern on the back wall. Volumetric shafts reach a closed mushaf on a carved lectern. |
-| **Camera** | Slow linear dolly-in (1.00 → 1.14), background at 45 % parallax. From 8.4 s the push accelerates into the cover medallion, which blooms gold: the match point for S02. |
-| **Object** | 3D CSS mushaf: green leather, gold double border, corner pieces, almond shamsa titled «القرآن الكريم». Spine on the right (Arabic binding); gilded fore-edge catches the window light; specular sweep 3–8 s. |
+| **Shot** | Fade up from black on a dark room. Sunrise brightens a pointed-arch mashrabiya (0.3–5 s); its lattice is cast as a warm shadow pattern on the wall. Volumetric shafts fall across a framed illuminated panel hanging on the wall above a carved dado rail. |
+| **Camera** | Slow linear dolly-in (1.00 → 1.14), background at 45 % parallax. From 8.4 s the push accelerates into the panel's shamsa, which blooms gold: the match point for S02. |
+| **Object** | Wall panel (لوحة حائطية): gilded moulded frame with carved bead and corner stars, ivory mat, emerald field with tazhib border, corner pieces, faint star lattice and a scalloped central shamsa titled «القرآن الكريم». Soft cast shadow down-right; a reflection sweeps across the glass 3–8 s. |
 | **Type** | Amiri. «حين يكون القرآن رفيقًا…» (champagne, 2.2 s) / «تصبح كل خطوة في طلب العلم نورًا.» (gold, 4.4 s, shine 6.2 s). |
 | **Sound** | Low swell from silence; shimmer + whoosh into the cut. |
 
@@ -20,7 +20,7 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 
 | | |
 |---|---|
-| **Shot** | The bloom contracts into a glowing hub labelled «ليبيا». Gold arcs draw out to a constellation of distant points (0.4–3.4 s). Three arches rise (2.8 s, staggered 0.5 s): woman studying at home · man reviewing his books · child learning beside his mother. Bridges draw from the hub to each arch. |
+| **Shot** | The bloom contracts into a glowing hub labelled «ليبيا». Gold arcs draw out to a constellation of distant points (0.4–3.4 s). Three arches rise (2.8 s, staggered 0.5 s): woman studying at home · two children reading together · child learning beside his mother. Bridges draw from the hub to each arch. |
 | **Camera** | Slow lateral drift right → left (60 px); arch interiors push in with foreground/background parallax. |
 | **Sound** | Shimmer bed; riser into S03. |
 
@@ -39,7 +39,7 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 
 | | |
 |---|---|
-| **Shots** | 3 × 4.33 s. (1) learner with a tablet lesson — «تعليم القرآن الكريم». (2) learner holding the mushaf to memorise — «تحفيظ القرآن الكريم». (3) learner reviewing back-lit study notes — «أحكام التلاوة والتجويد». |
+| **Shots** | 3 × 4.33 s. (1) woman following a tablet lesson — «تعليم القرآن الكريم». (2) woman holding the mushaf to memorise — «تحفيظ القرآن الكريم». (3) young woman reviewing back-lit study notes — «أحكام التلاوة والتجويد». |
 | **Transitions** | Right-to-left gold light wipe (0.7 s), echoing the reading direction. |
 | **Sound** | Page turns at the cuts, whooshes panned right → left. |
 
@@ -57,9 +57,9 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 
 | | |
 |---|---|
-| **Shot** | Four arches, right to left: mother & child · young adult with notes · older woman reading (glasses glint) · adult man learning online. Equal size, equal light: no generation is the "hero". |
+| **Shot** | Four arches, right to left: mother & child · young woman with notes · woman learning online · older woman reading (glasses glint). Women and children only; equal size, equal light: no generation is the "hero". |
 | **Camera** | Lateral track +110 → −110 px (16:9); static 2 × 2 grid (9:16). |
-| **Type** | «للنساء والرجال والأطفال» (2.2 s) / «ولجميع الأعمار» (4.4 s). |
+| **Type** | «للنساء والأطفال» (2.2 s) / «ولجميع الأعمار» (4.4 s). |
 
 ## S07 · تعلم مجاني عن بُعد — 01:08–01:19
 ![S07](frames/S07-16x9.jpg) ![S07 vertical](frames/S07-9x16.jpg)
@@ -68,7 +68,7 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 | | |
 |---|---|
 | **Phase 1 (0–5.4 s)** | Floating phone with a generic chat screen (academy avatar and name in the header; message rows are abstract placeholders: a lesson card, a voice note, a document, a reply). Paper-plane glyph, «التعلم عن بُعد», «عبر منصة تيليجرام». |
-| **Phase 2 (6.6 s →)** | «جميع البرامج التعليمية» / **«مجانًا بالكامل»** at 190 px with a radial gold particle burst, light rays and a shine pass. Lands on the narration's «مجانية بالكامل». |
+| **Phase 2 (6.6 s →)** | «دورات القرآن الكريم» / **«مجانًا بالكامل»** at 190 px with a radial gold particle burst, light rays and a shine pass. Lands on the narration's «مجانية بالكامل». Only the Quran courses are described as free. |
 | **Sound** | Riser → soft impact + shimmer at 74.6 s. |
 
 ## S08 · الخاتمة — 01:19–01:25
@@ -76,7 +76,7 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 
 | | |
 |---|---|
-| **Shot** | Back to the opening set, now in full warm light: stronger cast lattice, denser dust. Gentle pull-back (1.12 → 1.00), the opposite of S01's push-in. |
+| **Shot** | Back to the wall panel of the opening, now in full warm light: stronger cast lattice, denser dust. Gentle pull-back (1.12 → 1.00), the opposite of S01's push-in. |
 | **Type** | «فالعلم نور…» / «وخير ما نتعلمه ونعلمه كتاب الله.» |
 
 ## S09 · دعوة للانضمام — 01:25–01:32
@@ -84,5 +84,5 @@ Frames are real renders of the project (`scripts/render-keyframes.sh`). Left: 16
 
 | | |
 |---|---|
-| **Shot** | Emblem, name (gold), «تعليم القرآن الكريم وعلومه», «مجاني \| عن بُعد \| عبر تيليجرام», slogan «مع القرآن… تبدأ رحلتك، ويزهر أثرك.», pulsing gold button «انضموا إلينا الآن». The join QR (generated from the academy's Telegram invite link) and the printed link `t.me/+ctoiWdJG_zNkM2Nk` sit to the left of the column (16:9, right-to-left reading order) or below it (9:16). |
+| **Shot** | Emblem, name (gold), «تعليم القرآن الكريم وعلومه», «دورات القرآن مجانية \| عن بُعد \| عبر تيليجرام», slogan «مع القرآن… تبدأ رحلتك، ويزهر أثرك.», pulsing gold button «انضموا إلينا الآن». The join QR (generated from the academy's Telegram invite link) and the printed link `t.me/+ctoiWdJG_zNkM2Nk` sit to the left of the column (16:9, right-to-left reading order) or below it (9:16). |
 | **End** | Fade to black 6.2–7.0 s. The CTA fades in at 2.6 s and holds at full opacity for 2.9 s before the fade; to lengthen it, raise S09's `end` and `durationInSeconds` in `timeline.json` together. |

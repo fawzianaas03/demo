@@ -8,7 +8,7 @@ import { useLayout } from "../hooks/useLayout";
 import { EASE_IN_OUT, EASE_OUT, tween } from "../styles/anim";
 import { COLORS, FONTS } from "../styles/theme";
 
-const HOMES: VignetteKind[] = ["womanStudying", "manReviewing", "childWithParent"];
+const HOMES: VignetteKind[] = ["womanStudying", "childrenReading", "childWithParent"];
 
 /** 00:10–00:20 — from one glowing point in Libya, golden bridges reach homes and learners. */
 export const Scene02Bridges: React.FC = () => {

@@ -15,10 +15,10 @@
 
 | Component | File | Used in |
 |---|---|---|
-| 3D closed mushaf + carved lectern | `src/components/Mushaf.tsx` | S01, S08 |
-| Mashrabiya window + cast lattice light | `src/components/IslamicWindow.tsx` | S01, S08 |
+| Framed illuminated wall panel (gilded frame, tazhib, shamsa) | `src/components/WallPanel.tsx` | S01, S08 |
+| Mashrabiya window, cast lattice light, dado rail | `src/components/IslamicWindow.tsx` | S01, S08 |
 | Star-and-cross lattice, khatam star, rosette, gold divider, pointed arch | `src/components/Geometry.tsx` | throughout |
-| Arch vignettes (8 back-lit silhouette scenes / footage slots) | `src/components/Vignette.tsx` | S02, S04, S06 |
+| Arch vignettes (8 back-lit silhouette scenes of women and children / footage slots) | `src/components/Vignette.tsx` | S02, S04, S06 |
 | Logo medallion, paper-plane glyph, QR renderer, join block | `src/components/Brand.tsx` | S03, S07, S09 |
 | Program icons (letters, sound waves, children's book, manuscript, lantern) | `src/components/ProgramIcons.tsx` | S05 |
 | Generic messaging-app phone | `src/components/PhoneMockup.tsx` | S07 |

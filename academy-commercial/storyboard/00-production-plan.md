@@ -1,16 +1,16 @@
 # Production plan — الأكاديمية الليبية للقرآن وعلومه
 
-A ~90-second cinematic commercial for a free, Telegram-based Quranic academy, built as an editable
+A ~90-second cinematic commercial for a Telegram-based Quranic academy for women and children, whose Quran courses are free, built as an editable
 Remotion (React + TypeScript) project and rendered with FFmpeg.
 
 ## Creative approach
 
 | Pillar | Decision |
 |---|---|
-| Story | Light → bridges → identity → learning → programs → every generation → free & online → light again → invitation. The mushaf by the window opens and closes the film, so the ending reads as a return home. |
+| Story | Light → bridges → identity → learning → programs → women and children of every age → free Quran courses online → light again → invitation. The illuminated wall panel by the window opens and closes the film, so the ending reads as a return home. |
 | Look | Deep emerald (#064E3B / #062C24) with gold (#D4AF37 / #E7D7A2) and ivory (#F8F5ED). Sunlight through a mashrabiya is the recurring light source; the star-and-cross lattice is the recurring motif. |
-| People | Shown as **faceless, back-lit silhouettes** seated before sunlit windows inside pointed arches. Respectful, timeless and free of uncanny AI faces. Each arch is a **footage slot**: drop in licensed or filmed footage and it plays inside the same arch (see `src/data/footage.ts`). |
-| Religious text | No verses are shown, synthesised or paraphrased. Open books are shown from behind or defocused. The mushaf cover carries only its title, «القرآن الكريم». |
+| People | **Women and children only**, as the academy serves them. Shown as **faceless, back-lit silhouettes** seated before sunlit windows inside pointed arches. Respectful, timeless and free of uncanny AI faces. Each arch is a **footage slot**: drop in licensed or filmed footage and it plays inside the same arch (see `src/data/footage.ts`). |
+| Religious text | No verses are shown, synthesised or paraphrased. Open books are shown from behind or defocused. The wall panel carries only the title «القرآن الكريم». |
 | Typography | Amiri for display/calligraphic lines, Cairo for headings, Tajawal for supporting text and captions. Every Arabic string is one unbroken run in a `dir="rtl"` element, so letters join correctly. Reveals use soft right-to-left masks, never per-letter splitting. |
 | Sound | Instrument-free soundscape: shaped-noise "air", sub-rumble, scene breaths, right-to-left whooshes, synthesised page turns, gold shimmer, soft impacts. No recitation is used. |
 | Narration | Modern Standard Arabic, recorded externally (no suitable Arabic TTS was available in the build environment). The film carries burned-in captions so it works muted until narration is added. |
@@ -20,7 +20,7 @@ Remotion (React + TypeScript) project and rendered with FFmpeg.
 | # | Scene | Time | Transition in |
 |---|---|---|---|
 | 01 | بداية النور | 00:00–00:10 | fade from black |
-| 02 | علم بلا حدود | 00:10–00:20 | match-dissolve: cover medallion → glowing hub |
+| 02 | علم بلا حدود | 00:10–00:20 | match-dissolve: panel shamsa → glowing hub |
 | 03 | الكشف عن الأكاديمية | 00:20–00:31 | dissolve + soft light bloom |
 | 04 | تعلم القرآن | 00:31–00:44 | dissolve; internal right-to-left gold light wipes |
 | 05 | البرامج التعليمية | 00:44–00:57 | dissolve |
