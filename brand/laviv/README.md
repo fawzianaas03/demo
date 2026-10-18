@@ -36,6 +36,8 @@ Four very different logo concepts. None of them use a font. Every Latin letter, 
 **Lettering.** Hairline, wide-tracked capitals with sharp apexes for a fashion-house feel, paired with a fine monoline Arabic.
 **System.** Single-line brass inlay or neon, die-cut tags, repeat patterns for tissue and bags.
 
+> **Developed further →** [`concept-03-continuum/`](concept-03-continuum/README.md): refined lettering, four lockups in five colourways, construction rules, pattern, mockups and a 12-page PDF.
+
 ## 04 — Kufic Blade
 ![Kufic Blade](boards/04-kufic-blade.png)
 
@@ -61,7 +63,8 @@ Presentation boards are in `boards/`.
 ## Rebuild
 
 ```sh
-node brand/laviv/src/build.mjs
+node brand/laviv/src/build.mjs        # the four-concept exploration
+node brand/laviv/src/book/build.mjs   # the Continuum identity book
 ```
 
 This uses the Playwright/Chromium install to render the boards. The SVGs are written straight from `src/concepts.mjs`, where every proportion is a named parameter.

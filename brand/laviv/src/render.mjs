@@ -14,3 +14,12 @@ export async function renderPages(jobs) {
   }
   await browser.close();
 }
+
+export async function renderPdf(html, out) {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.setContent(html, { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+  await page.pdf({ path: out, width: '1800px', height: '1200px', printBackground: true });
+  await browser.close();
+}

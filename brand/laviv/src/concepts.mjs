@@ -1,7 +1,8 @@
 import {
-  PALETTE as P, n, poly, rect, roundRect, roundRectCCW, diamond, place,
+  PALETTE as P, n, uid, poly, rect, roundRect, roundRectCCW, diamond, place,
   monoCaps, geoWord, geoDiagonal, arabicGeo,
 } from './geometry.mjs';
+import { symbol as continuumSymbol, LOCKUPS } from './continuum.mjs';
 
 const SUB = 'PROFESSIONAL BARBER SUPPLIES';
 
@@ -79,7 +80,7 @@ function razorSymbol() {
   return {
     w: 148, h: 160,
     render: (c) => {
-      const id = `rz${Math.random().toString(36).slice(2, 7)}`;
+      const id = uid('rz');
       return `<defs><clipPath id="${id}a"><rect x="0" y="0" width="200" height="150.5"/></clipPath>` +
         `<clipPath id="${id}b"><rect x="0" y="153" width="200" height="20"/></clipPath></defs>` +
         `<path fill="${c.ink}" fill-rule="evenodd" d="${scale}M${pin.cx + pin.r} ${pin.cy}A${pin.r} ${pin.r} 0 1 0 ${pin.cx + pin.r} ${pin.cy + 0.01}Z"/>` +
@@ -213,73 +214,8 @@ function razorLockup(c) {
   return { w: W, h: H, body };
 }
 
-// ===========================================================================
-// 03 — CONTINUUM
-// One unbroken stroke writes both names: down the shared stem, out along the
-// foot of the Latin L, then a hairpin turn back beneath it to complete the bowl
-// of the Arabic ل. The turn is the shape of the salon hair pin; both terminals
-// are cut clean at the same razor angle.
-// ===========================================================================
-function continuumSymbol() {
-  const w = 20, gap = 2.5;
-  const sx = 56, foot = 104, bowl = 156, fx = 126, lx = 10;
-  const L = `M${sx} -20V${foot}H${fx - gap}`;
-  const r = (bowl - foot) / 2, R = sx - lx;
-  const ret = `M${fx} ${foot}A${r} ${r} 0 0 1 ${fx} ${bowl}H${sx}A${R} ${R} 0 0 1 ${lx} ${bowl - R}V50`;
-  // razor cut: both terminals sliced along parallel lines (slope 1:2, rising to the right)
-  const cutAt = (x0, y0) => (x) => y0 - 0.5 * (x - x0);
-  const up = cutAt(lx, 84), st = cutAt(sx, 12);
-  const clip = `M-30 220V${n(up(-30))}L34 ${n(up(34))}V${n(st(34))}L90 ${n(st(90))}H220V220Z`;
-  const top = st(sx + w / 2);
-  return {
-    w: fx + r + w / 2, h: bowl + w / 2 - top,
-    render: (c) => {
-      const id = `ct${Math.random().toString(36).slice(2, 7)}`;
-      return `<defs><clipPath id="${id}"><path d="${clip}"/></clipPath></defs>` +
-        `<g transform="translate(0 ${n(-top)})"><g clip-path="url(#${id})" fill="none" stroke-width="${w}" stroke-linecap="butt" stroke-linejoin="miter">` +
-        `<path stroke="${c.ink}" d="${L}"/><path stroke="${c.accent}" d="${ret}"/></g></g>`;
-    },
-  };
-}
-
-function continuumWord() {
-  const s = 5.2, W = 92, b = 0;
-  const g = geoDiagonal(s, W, b, false);
-  const space = 64;
-  const diag = g.cx - 0 - space; // horizontal distance between parallel diagonals
-  const wd = geoWord([
-    { ch: 'L', W: 62 },
-    { ch: 'A', W, b, bar: [66, 66 + s], kern: 16 },
-    { ch: 'V', W, b, kern: -diag + 18 },
-    { ch: 'I', kern: space },
-    { ch: 'V', W, b, kern: space },
-  ], { s, gap: space });
-  return { w: wd.w, h: 100, render: (c) => `<g fill="${c.ink}">${wd.body}</g>` };
-}
-
-function continuumLockup(c) {
-  const sym = continuumSymbol();
-  const word = continuumWord();
-  const ar = arabicGeo({ w: 5.6, loopW: 36, loopH: 34, toothH: 34, tick: 24, tail: 36, gaps: [24, 24, 30], dot: 9, dotGap: 10, round: 1 });
-  const sub = monoCaps(SUB, { cap: 10, weight: 1.15, tracking: 0.55 });
-  const symS = 1.25;
-  const symW = sym.w * symS, symH = sym.h * symS;
-  const textX = symW + 72;
-  const wordS = 0.92;
-  const textW = word.w * wordS;
-  const arS = 0.66;
-  const subS = (textW - ar.w * arS - 40) / sub.w;
-  const top = (symH - (100 * wordS + 44 + 100 * arS)) / 2 + 4;
-  const ruleY = top + 100 * wordS + 22;
-  const lowerBase = ruleY + 22 + 100 * arS;
-  const body =
-    place(sym, 0, 0, symS, c) +
-    place(word, textX, top, wordS, c) +
-    `<rect x="${n(textX)}" y="${n(ruleY)}" width="${n(textW)}" height="1" fill="${c.accent}"/>` +
-    place({ render: () => sub.render(c.ink) }, textX, lowerBase - sub.h * subS, subS) +
-    place(ar, textX + textW - ar.w * arS, lowerBase - 100 * arS, arS, c);
-  return { w: textX + textW, h: symH, body };
-}
+// 03 — CONTINUUM lives in ./continuum.mjs (developed identity system).
+const continuumLockup = (c) => LOCKUPS.horizontal(c);
 
 // ===========================================================================
 // 04 — KUFIC BLADE
@@ -311,7 +247,7 @@ function kuficSymbol() {
   return {
     w: W, h: teethB,
     render: (c) => {
-      const id = `kb${Math.random().toString(36).slice(2, 7)}`;
+      const id = uid('kb');
       return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="-10" y="-10" width="${W + 20}" height="${teethB + 20}">` +
         `<rect x="-10" y="-10" width="${W + 20}" height="${teethB + 20}" fill="#fff"/>` +
         `<path fill="#000" d="${holes}"/></mask></defs>` +

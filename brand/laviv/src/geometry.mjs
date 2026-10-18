@@ -9,6 +9,10 @@ export const PALETTE = {
 
 export const n = (v) => Math.round(v * 100) / 100;
 
+// Deterministic ids for clip paths and masks, so rebuilt files only change when the artwork does.
+let idCount = 0;
+export const uid = (prefix) => `${prefix}${(++idCount).toString(36)}`;
+
 // Polygon -> path data, always wound clockwise so overlapping parts union under nonzero fill.
 export function poly(pts) {
   let area = 0;
@@ -115,14 +119,16 @@ export function geoWord(letters, { s, gap }) {
   for (const L of letters) {
     let d = '';
     const W = L.W ?? s;
+    // `cut` slices the top of a stem at 1:2, rising to the right (Concept 03's razor cut)
+    const c = L.cut ? s / 2 : 0;
     if (L.ch === 'L') {
       if (L.part) {
         d = rect(0, 0, s, 100 - s - L.part) + rect(0, 100 - s, W, s);
       } else {
-        d = poly([[0, 0], [s, 0], [s, 100 - s], [W, 100 - s], [W, 100], [0, 100]]);
+        d = poly([[0, c], [s, 0], [s, 100 - s], [W, 100 - s], [W, 100], [0, 100]]);
       }
     } else if (L.ch === 'I') {
-      d = rect(0, 0, s, 100);
+      d = poly([[0, c], [s, 0], [s, 100], [0, 100]]);
     } else if (L.ch === 'V' || L.ch === 'A') {
       const g = geoDiagonal(s, W, L.b ?? s, L.ch === 'A');
       d = poly(g.pts);
